@@ -1,0 +1,25 @@
+<input type="text" #name>
+<button (click)="show(name.value)">search</button>
+<div>
+  <ul *ngFor="let f of names">
+    <li>{{f.name}}</li>
+    <li>{{f.run}}</li>
+    <li>{{f.matches}}</li>
+
+  </ul>
+</div>
+
+<table border="1">
+  <tr>
+    <th>name</th>
+    <th>Runs</th>
+    <th>Matches</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let item of items; let i = index">
+    <td>{{ item.name }}</td>
+    <td>{{ item.run }}</td>
+    <td>{{ item.matches }}</td>
+    <td><button (click)="deleteRow(item)">Delete</button></td>
+  </tr>
+</table>
